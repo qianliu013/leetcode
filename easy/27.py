@@ -22,6 +22,7 @@ def _solve(nums, val):
     return front
 
 
+
 def _solve1(nums, val):
     new_len = 0
     for num in nums:

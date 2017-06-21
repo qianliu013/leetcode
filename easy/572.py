@@ -58,7 +58,8 @@ if __name__ == '__main__':
     print _solve(TreeNode.de_serialize('[3,4,5,1,2,null,null,null,null,0]'),
                  TreeNode.de_serialize('[4,1,2]'))
     print _solve(
-        TreeNode.de_serialize('[1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,2]'),
+        TreeNode.de_serialize(
+            '[1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,2]'),
         TreeNode.de_serialize('[1,null,1,null,1,null,1,null,1,null,1,2]'))
 
     print '---'
@@ -68,5 +69,6 @@ if __name__ == '__main__':
     print _solve2(TreeNode.de_serialize('[3,4,5,1,2,null,null,null,null,0]'),
                   TreeNode.de_serialize('[4,1,2]'))
     print _solve2(
-        TreeNode.de_serialize('[1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,2]'),
+        TreeNode.de_serialize(
+            '[1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,null,1,2]'),
         TreeNode.de_serialize('[1,null,1,null,1,null,1,null,1,null,1,2]'))
