@@ -1,4 +1,5 @@
 .vscode/
-common/*.pyc
+*/*.pyc
+summary.md
 */summary.md
 common/test.py
