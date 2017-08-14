@@ -21,8 +21,7 @@
 
 - 大部分 solution 下都包含几种题解
   - 一部分是自己的思考
-  - 一部分整理自 discuss 中 VOTE >= 10 的部分
+  - 一部分整理自 discuss 中高票的内容
 
 - 一些内容说明
-  - `_solve` 加 `_` 是表示 Internal
-  - `from __future__ import print_function` 是为了方便 `print ('hello', end='')` 这种格式的输出
+  - 名字前加 `_` 和 `__` 遵循 pep8（使用 pylint 检查规范）
