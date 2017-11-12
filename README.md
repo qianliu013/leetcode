@@ -4,7 +4,7 @@
 
 - common 放用于一些 LeetCode 代码运行需要的 package，如 TreeNode，ListNode 和用于测试的 test_tools.py
 - 文件夹用难度分类，名称为题号
-- easy 难度全部用 python 而写，但大部分代码很容易稍微改动成其他语言的形式
+- 使用 python 而写，但大部分代码很容易稍微改动成其他语言的形式
 
 ## 文件内容说明
 
@@ -20,6 +20,7 @@
   - 提交 LeetCode 运行的时候仅需提交函数后的一部分，注意缩进
 
 - 大部分 solution 下都包含几种题解
+
   - 一般第一（或包含第二）个解法是自己思考后 Accepted 的解法
   - 其后的部分整理改编自 discuss 中高票的内容
 
