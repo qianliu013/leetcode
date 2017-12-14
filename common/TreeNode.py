@@ -12,6 +12,10 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
+    def __repr__(self):
+        """Print node val instead of origin val."""
+        return str(self.val)
+
     def print_tree(self):
         """Print Tree."""
         layer = 0

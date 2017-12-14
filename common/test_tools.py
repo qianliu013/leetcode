@@ -18,10 +18,11 @@ def generate_random_arr(length=7, start=1, end=10):
     return [random.randint(start, end) for _ in range(length)]
 
 
-def log_execution_time(description=''):
+def log_execution_time(description='', return_time=False):
     """Log execution time by using time.time().
 
     :param description: string, default value is ''.
+    :param return_time: boolean, default value is False.
     :return: function
     """
     def _real_decorator(func):
@@ -29,12 +30,16 @@ def log_execution_time(description=''):
         def _wrapper(*args, **kwargs):
             start = time.time()
             result = func(*args, **kwargs)
-            print 'Function: {0}; Description: {1} ;time: {2}'.format(
-                func.__name__,
-                description,
-                time.time() - start
-            )
-            return result
+            running_time = time.time() - start
+            if return_time:
+                return running_time
+            else:
+                print 'Function: {0}; Description: {1} ;time: {2}'.format(
+                    func.__name__,
+                    description,
+                    running_time
+                )
+                return result
         return _wrapper
     return _real_decorator
 
