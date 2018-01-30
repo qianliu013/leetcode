@@ -1,5 +1,4 @@
 # coding=utf-8
-
 """ListNode."""
 
 from __future__ import print_function
@@ -32,9 +31,12 @@ class ListNode(object):
 
     def print_list(self):
         """Print list."""
-        cur = self.next
-        print (self.val, end='')
-        while cur:
-            print (' -> ' + str(cur.val), end='')
-            cur = cur.next
-        print ()
+        print(' -> '.join(map(str, self.to_list())))
+
+    def to_list(self):
+        """Print list."""
+        res = []
+        while self:
+            res.append(self.val)
+            self = self.next
+        return res

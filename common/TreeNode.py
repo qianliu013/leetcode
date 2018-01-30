@@ -18,30 +18,19 @@ class TreeNode(object):
 
     def print_tree(self):
         """Print Tree."""
-        layer = 0
-        queue = [(self, layer)]
-        while len(queue):
-            cur = queue.pop(0)
-            cur_node = cur[0]
-            cur_layer = cur[1]
-            if cur_layer > layer:
-                print ('-> ', end='')
-                layer = cur_layer
-            print (str(cur[0].val), '', end='')
-            if cur_node.left:
-                queue.append((cur_node.left, cur_layer + 1))
-            if cur_node.right:
-                queue.append((cur_node.right, cur_layer + 1))
-        print ()
+        queue = [[self]]
+        while queue[-1]:
+            queue.append([child for node in queue[-1] if node for child in (node.left, node.right)])
+        print(queue[:-2])
 
     def print_tree_in_order(self):
         """In-Order Traversal."""
         if self.left:
             self.left.print_tree()
-        print (str(self.val) + ' -> ', end='')
+        print(str(self.val) + ' -> ', end='')
         if self.right:
             self.right.print_tree()
-        print ('End')
+        print('End')
 
     def get_depth(self):
         """Get the depth of node."""
@@ -54,8 +43,9 @@ class TreeNode(object):
         """Build a tree from the string."""
         if string == '{}':
             return None
-        nodes = [None if val == 'null' else cls(int(val))
-                 for val in string.strip('[]{}').split(',')]
+        nodes = [
+            None if val == 'null' else cls(int(val)) for val in string.strip('[]{}').split(',')
+        ]
         kids = nodes[::-1]
         root = kids.pop()
         for node in nodes:
